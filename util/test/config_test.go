@@ -2,9 +2,10 @@ package test
 
 import (
 	"fmt"
-	"go-start/util"
 	"testing"
 	"time"
+
+	"github.com/92m/go-start/util"
 )
 
 func TestProjectRootPath(t *testing.T) {

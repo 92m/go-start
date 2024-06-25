@@ -1,4 +1,4 @@
-module go-start
+module github.com/92m/go-start
 
 go 1.20
 

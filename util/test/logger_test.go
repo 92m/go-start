@@ -1,8 +1,9 @@
 package test
 
 import (
-	"go-start/util"
 	"testing"
+
+	"github.com/92m/go-start/util"
 )
 
 func TestLogger(t *testing.T) {
