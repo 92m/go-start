@@ -1,0 +1,39 @@
+gl_version: gl-1.9-21.0630.10
+framework_path: 
+framework_desc:
+  desc: 本框架是Golang的web MVC框架，基础特性基于Gin。
+  authot: node
+  email: nnnnnm.node@gmail.com
+  github: https://github.com/92m/go-start
+# 项目配置
+config:
+  timezone: Asia/Shanghai
+  api_version_block: 0&0
+  web_version_block: 0&0
+  # 启动服务配置
+  server:
+    host: localhost
+    port: 8090
+    env: release
+  # grpc配置
+  grpc:
+    host: 127.0.0.1
+    port: 9090
+  # 数据库配置
+  mysql:
+    schema: blog
+    host: localhost
+    port: 3306
+    user: tester
+    pass: 123456
+    charset: utf8mb4
+  # redis配置
+  redis:
+    addr: 127.0.0.1:6379
+    password: 123456
+    db: 0
+  # 静态资源配置
+  view:
+    view_static: storage/static/
+common:
+  log_debug: true
