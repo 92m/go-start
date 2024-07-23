@@ -6,6 +6,7 @@ import (
 
 	"github.com/92m/go-start/app/Http/Middlewares"
 	"github.com/92m/go-start/config"
+	"github.com/92m/go-start/routes"
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,6 +24,18 @@ func App(HttpServer *gin.Engine) {
 
 	// 设置全局ctx参数（必须排第二）
 	HttpServer.Use(Middlewares.AppData)
+
+	// 拦截应用500报错，使之可视化
+	HttpServer.Use(Middlewares.AppError500)
+
+	// Gin运行时：release、debug、test
+	gin.SetMode(serverConfig["ENV"])
+
+	// 注册必要路由，处理默认路由、静态文件路由、404路由等
+	routes.RouteMust(HttpServer)
+
+	// 注册其他路由，可以自定义
+	routes.RouterRegister(HttpServer)
 
 	// 实际访问网址和端口
 	_host := "127.0.0.1:" + serverConfig["PORT"]              // 测试访问IP
